@@ -1,7 +1,7 @@
 {
   "name": "splunk-logger",
   "description": "Splunk Logger Plugin for the Reekoh IoT Platform.",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "Reekoh, Inc.",
   "main": "app.js",
   "scripts": {
