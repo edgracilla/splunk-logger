@@ -1,21 +1,20 @@
 'use strict';
 
 var platform = require('./platform'),
-    isPlainObject = require('lodash.isplainobject'),
+    isEmpty = require('lodash.isempty'),
 	splunkClient;
 
 platform.on('log', function (logData) {
-    if(!logData) return;
-
-    if(isPlainObject(logData))
-        logData = JSON.stringify(logData);
-
-    splunkClient.send(logData, function(error, response, body) {
-        if(error){
-            console.error(error);
-            platform.handleException(error);
-        }
-    });
+    if(isEmpty(logData))
+        platform.handleException(new Error(`Invalid data received. Data must not be empty.`));
+    else{
+        splunkClient.send({message: logData}, function(error, response, body){
+            if(error){
+                console.error(error);
+                platform.handleException(error);
+            }
+        });
+    }
 });
 
 platform.once('close', function () {
