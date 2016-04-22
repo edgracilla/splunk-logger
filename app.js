@@ -10,7 +10,7 @@ platform.on('log', function (logData) {
     if(isPlainObject(logData))
         logData = JSON.stringify(logData);
 
-    splunkClient.send(logData, function(error, response, body) {
+    splunkClient.send({message: logData}, function(error, response, body){
         if(error){
             console.error(error);
             platform.handleException(error);
