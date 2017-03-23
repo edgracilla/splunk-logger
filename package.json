@@ -1,28 +1,29 @@
 {
   "name": "splunk-logger",
-  "description": "Splunk Logger Plugin for the Reekoh IoT Platform.",
   "version": "1.0.0",
-  "author": "Reekoh, Inc.",
+  "description": "Splunk Logger Plugin for the Reekoh IoT Platform",
   "main": "app.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Reekoh/splunk-logger"
-  },
+  "author": "reekoh",
+  "license": "GPL-3.0",
   "dependencies": {
+    "amqplib": "^0.5.1",
+    "reekoh": "^1.0.0",
     "lodash.isempty": "^4.2.1",
     "splunk-logging": "^0.9.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-cli": "^1.2.1",
-    "gulp-jshint": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
     "gulp-json-lint": "^0.1.0",
     "gulp-mocha": "^2.2.0",
     "gulp-plumber": "^1.1.0",
-    "mocha": "^2.4.5"
-  },
-  "license": "LGPL-3.0"
+    "gulp-standard": "^8.0.4",
+    "jshint": "^2.9.4",
+    "mocha": "^2.5.3",
+    "should": "^9.0.2"
+  }
 }
